@@ -14,7 +14,6 @@ public class MineSweeper extends JFrame {
     private int[][] neighborMines = new int[ROWS][COLS];
 
     public MineSweeper() {
-        // ตั้งค่าหน้าต่างโปรแกรม
         setTitle("Java Mine Sweeper");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new GridLayout(ROWS, COLS)); // ใช้ GridLayout สร้างตาราง
@@ -26,7 +25,6 @@ public class MineSweeper extends JFrame {
                 buttons[row][col].setFont(new Font("Arial", Font.BOLD, 18));
                 buttons[row][col].setFocusPainted(false);
                 
-                // เพิ่ม Event ให้แต่ละปุ่มเมื่อถูกคลิก
                 final int r = row;
                 final int c = col;
                 buttons[row][col].addActionListener(new ActionListener() {
@@ -86,7 +84,7 @@ public class MineSweeper extends JFrame {
         if (isMine[row][col]) {
             buttons[row][col].setText("*");
             buttons[row][col].setBackground(Color.RED);
-            JOptionPane.showMessageDialog(this, "Game Over! โดนระเบิดซะแล้ว!");
+            JOptionPane.showMessageDialog(this, "Game Over!");
             System.exit(0);
         } else {
 
